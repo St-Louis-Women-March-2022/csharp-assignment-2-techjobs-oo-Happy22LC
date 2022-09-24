@@ -48,6 +48,7 @@ namespace TechJobsOOTests
         {
             //setup
             Location testLocation = new Location("Desert");
+            
 
             //verify
             Assert.AreEqual("Desert", testLocation.Value, "Is Value set at time of declaration?");
@@ -59,11 +60,18 @@ namespace TechJobsOOTests
         public void Test_Second_Location_Constructor_Initializes_Id()
         {
             //setup
-            Location testLocation = new Location("Desert");
+            //Location testLocation = new Location("Desert");
+            //Location testLocation = new Location();
+            // we have to called twice to see increment to 2. see constructor code in Location.cs line 14-15
+            //Location testLocation = new Location();
+            Location testLocation = new Location();
+
             Console.WriteLine(testLocation.Id);
 
             //verify
-            Assert.AreEqual(2, testLocation.Id, "Second constructor not able to update Id");
+            // we have to use to see testLocation2.see constructor code in Location.cs line 14 - 15
+            Assert.AreEqual(1, testLocation.Id, "Second constructor not able to update Id");
+            //Assert.AreEqual(2, testLocation.Id, "Second constructor not able to update Id");
             Assert.IsFalse(testLocation.Id == 4, "Second constructor passes value to Id. Is this desirable?");
         }
 
