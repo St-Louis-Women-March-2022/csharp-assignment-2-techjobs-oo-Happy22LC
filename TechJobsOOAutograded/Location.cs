@@ -3,28 +3,12 @@ using TechJobsOOAutograded;
 
 namespace TechJobsOO
 {
-    public class Location
+    public class Location : JobField
     {
-        public int Id { get; }
-        //changed to public
-        public static int nextId = 1;
-        public string Value { get; set; }
-
-        public Location()
+        //removed code that matches from JobField (e.g. the Id and Value properties and the nextId field are shared).
+        public Location(string value) : base(value)
         {
-            Id = nextId;
-            nextId++;
         }
-
-        // TODO: Add a second constructor to this class that uses the Location() constructor and sets the value of the value field.
-        //addded value
-        public Location(string value) : this()
-        {
-            Value = value;
-           // Id = id; 
-            
-        }
-
         public override bool Equals(object obj)
         {
             return obj is Location location &&

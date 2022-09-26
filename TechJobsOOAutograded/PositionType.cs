@@ -3,27 +3,16 @@ using TechJobsOOAutograded;
 
 namespace TechJobsOO
 {
-    public class PositionType
+    public class PositionType : JobField
     {
-
-        public int Id { get; }
-        //changed to public
-        public static int nextId = 1;
-        public string Value { get; set; }
-
-        public PositionType()
+        //removed code that matches from JobField (e.g. the Id and Value properties and the nextId field are shared).
+        public PositionType(string value) : base(value)
         {
-            Id = nextId;
-            nextId++;
         }
 
-        public PositionType(string value) : this()
-        {
-            Value = value;
-        }
 
         // TODO: Add custom Equals(), GetHashCode(), and ToString() methods.
-        
+
         public override string ToString()
         {
             return Value;

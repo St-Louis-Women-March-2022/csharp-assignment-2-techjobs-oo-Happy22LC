@@ -3,23 +3,12 @@ using TechJobsOOAutograded;
 
 namespace TechJobsOO
 {
-    public class Employer
+    public class Employer : JobField
     {
-        public int Id { get; }
-        private static int nextId = 1;
-        public string Value { get; set; }
-
-        public Employer()
+        //removed code that matches from JobField (e.g. the Id and Value properties and the nextId field are shared).
+        public Employer(string value) : base(value)
         {
-            Id = nextId;
-            nextId++;
         }
-
-        public Employer(string value) : this()
-        {
-            Value = value;
-        }
-
         public override bool Equals(object obj)
         {
             return obj is Employer employer &&

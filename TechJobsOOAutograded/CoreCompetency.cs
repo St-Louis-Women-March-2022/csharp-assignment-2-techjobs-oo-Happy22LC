@@ -3,26 +3,12 @@ using TechJobsOOAutograded;
 
 namespace TechJobsOO
 {
-    public class CoreCompetency
+    public class CoreCompetency : JobField
     {
 
-        //private int id;
-        public int Id { get; }
-        //changed to public
-        public static int nextId = 1;
-        //private string value;
-        public string Value { get; set; }
-        // TODO: Change the fields to auto-implemented properties.
-
-        public CoreCompetency()
+        //removed code that matches from JobField (e.g. the Id and Value properties and the nextId field are shared).
+        public CoreCompetency(string value) : base(value)
         {
-            Id = nextId;
-            nextId++;
-        }
-
-        public CoreCompetency(string v) : this()
-        {
-            Value = v;
         }
 
         public override bool Equals(object obj)

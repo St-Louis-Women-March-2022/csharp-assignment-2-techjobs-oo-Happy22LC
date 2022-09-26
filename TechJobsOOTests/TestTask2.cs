@@ -64,7 +64,7 @@ namespace TechJobsOOTests
             //Location testLocation = new Location();
             // we have to called twice to see increment to 2. see constructor code in Location.cs line 14-15
             //Location testLocation = new Location();
-            Location testLocation = new Location();
+            Location testLocation = new Location("Desert");
 
             Console.WriteLine(testLocation.Id);
 
