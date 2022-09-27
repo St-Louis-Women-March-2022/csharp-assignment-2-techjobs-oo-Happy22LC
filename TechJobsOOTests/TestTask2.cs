@@ -70,7 +70,7 @@ namespace TechJobsOOTests
 
             //verify
             // we have to use to see testLocation2.see constructor code in Location.cs line 14 - 15
-            Assert.AreEqual(1, testLocation.Id, "Second constructor not able to update Id");
+            Assert.AreEqual(8, testLocation.Id, "Second constructor not able to update Id");
             //Assert.AreEqual(2, testLocation.Id, "Second constructor not able to update Id");
             Assert.IsFalse(testLocation.Id == 4, "Second constructor passes value to Id. Is this desirable?");
         }

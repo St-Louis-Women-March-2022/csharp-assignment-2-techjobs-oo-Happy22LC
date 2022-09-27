@@ -54,12 +54,12 @@ namespace TechJobsOO
         public override bool Equals(object obj)
         {
             return obj is TechJob job &&
-                   Id == job.Id &&
-                   Name == job.Name &&
+                   Id == job.Id;
+                   /*Name == job.Name &&
                    EqualityComparer<Employer>.Default.Equals(EmployerName, job.EmployerName) &&
                    EqualityComparer<Location>.Default.Equals(EmployerLocation, job.EmployerLocation) &&
                    EqualityComparer<PositionType>.Default.Equals(JobType, job.JobType) &&
-                   EqualityComparer<CoreCompetency>.Default.Equals(JobCoreCompetency, job.JobCoreCompetency);
+                   EqualityComparer<CoreCompetency>.Default.Equals(JobCoreCompetency, job.JobCoreCompetency);*/
         }
 
         public override int GetHashCode()
@@ -70,7 +70,8 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            string NaN = "Data Not Available";
+            string NaN = "Data not available";
+            
 
             if (Name == null || Name == "")
             {
@@ -93,12 +94,12 @@ namespace TechJobsOO
                 JobCoreCompetency.Value = NaN;
             }
 
-            return "\n" + "ID: " + Id + "\n" +
-                    "Name: " + Name + "\n" +
-                    "Employer: " + EmployerName.ToString() + "\n" +
-                    "Location: " + EmployerLocation.ToString() + "\n" +
-                    "Position Type: " + JobType.ToString() + "\n" +
-                    "Core Competency: " + JobCoreCompetency.ToString() + "\n";
+            return Environment.NewLine + "ID: " + Id + Environment.NewLine +
+                    "Name: " + Name + Environment.NewLine +
+                    "Employer: " + EmployerName.Value + Environment.NewLine +
+                    "Location: " + EmployerLocation.Value + Environment.NewLine +
+                    "Position Type: " + JobType.Value + Environment.NewLine +
+                    "Core Competency: " + JobCoreCompetency.Value + Environment.NewLine;
         }
     }
 }

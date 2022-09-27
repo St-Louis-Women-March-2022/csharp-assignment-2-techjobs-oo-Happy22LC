@@ -69,8 +69,9 @@ namespace TechJobsTest
             char[] jobChar = jobString.ToCharArray();
 
             //Check
-            Assert.AreEqual('\n', jobChar[jobChar.Length - 1]);
-            Assert.AreEqual('\n', jobChar[0]);
+            Assert.IsTrue(jobString.StartsWith(Environment.NewLine));
+
+            Assert.IsTrue(jobString.EndsWith(Environment.NewLine));
         }
 
         [TestMethod]
@@ -79,12 +80,12 @@ namespace TechJobsTest
 
             //Arrange
             TechJob job1 = new TechJob("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            String answer = $"\nID: " + job1.Id + "\n" +
-                    "Name: " + job1.Name + "\n" +
-                    "Employer: " + job1.EmployerName.ToString() + "\n" +
-                    "Location: " + job1.EmployerLocation.ToString() + "\n" +
-                    "Position Type: " + job1.JobType.ToString() + "\n" +
-                    "Core Competency: " + job1.JobCoreCompetency.ToString() + "\n";
+            String answer = Environment.NewLine +"ID: " + job1.Id + Environment.NewLine +
+                    "Name: " + job1.Name + Environment.NewLine +
+                    "Employer: " + job1.EmployerName.Value + Environment.NewLine +
+                    "Location: " + job1.EmployerLocation.Value + Environment.NewLine +
+                    "Position Type: " + job1.JobType.Value + Environment.NewLine +
+                    "Core Competency: " + job1.JobCoreCompetency.Value + Environment.NewLine;
             //Check
             Assert.AreEqual(job1.ToString(), answer);
         }
@@ -125,7 +126,7 @@ namespace TechJobsTest
                 job1.JobCoreCompetency.Value = NaN;
                 Assert.AreEqual(job1.JobCoreCompetency.ToString(), NaN);
             }
-            
+            //Assert.AreEqual(job1.ToString(), NaN);
         }
 
     }
