@@ -3,40 +3,28 @@ using TechJobsOOAutograded;
 
 namespace TechJobsOO
 {
-    public class CoreCompetency
+    public class CoreCompetency : JobField
     {
 
-        private int id;
-        private static int nextId = 1;
-        private string value;
-
-        // TODO: Change the fields to auto-implemented properties.
-
-        public CoreCompetency()
+        //removed code that matches from JobField (e.g. the Id and Value properties and the nextId field are shared).
+        public CoreCompetency(string value) : base(value)
         {
-            id = nextId;
-            nextId++;
-        }
-
-        public CoreCompetency(string v) : this()
-        {
-            value = v;
         }
 
         public override bool Equals(object obj)
         {
             return obj is CoreCompetency competency &&
-                   id == competency.id;
+                   Id == competency.Id;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(id);
+            return HashCode.Combine(Id);
         }
 
         public override string ToString()
         {
-            return value;
+            return Value;
         }
 
     }
