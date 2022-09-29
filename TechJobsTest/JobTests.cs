@@ -92,7 +92,7 @@ namespace TechJobsTest
 
         public void TestToStringHandlesEmptyField()
         {
-            //Arrange
+            /*//Arrange
             TechJob job1 = new TechJob("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             string NaN = "Data not available";
 
@@ -126,7 +126,12 @@ namespace TechJobsTest
                 job1.JobCoreCompetency.Value = NaN;
                 Assert.AreEqual(job1.JobCoreCompetency.ToString(), NaN);
             }
-            //Assert.AreEqual(job1.ToString(), NaN);
+            //Assert.AreEqual(job1.value, NaN);*/
+            TechJob job2 = new TechJob();
+            job2.JobCoreCompetency.Value = "";
+            string expected = Environment.NewLine + "ID: " + job2.Id + Environment.NewLine + "Name: Product tester" + Environment.NewLine+"Employer: ACME" + Environment.NewLine + "Location: Desert" + Environment.NewLine+"Position Type: Quality control" + Environment.NewLine + "Core Competency: Data not available" + Environment.NewLine;
+            Assert.AreEqual(expected, job2.ToString());
+
         }
 
     }
